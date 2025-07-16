@@ -28,6 +28,7 @@ classifiers = [
 [dependency-groups]
 dev = [
     "black>=25.1.0",
+    "pytest>=8.4.1",
     "ruff>=0.12.3",
     "ty>=0.0.1a14",
 ]
@@ -44,6 +45,9 @@ target-version = "py311"
 [tool.ruff.lint]
 select = ["ALL"]
 ignore = ["D203", "D213"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*.py" = ["ANN001", "ANN201", "D100", "D102", "D400", "D415", "E501", "F401", "INP001", "PLC0415", "PLR2004", "PT009", "PT027", "S101", "SIM115", "TRY003"]
 
 [tool.ruff.format]
 # Same as Black.

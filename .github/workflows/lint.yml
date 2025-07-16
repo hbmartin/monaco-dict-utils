@@ -1,4 +1,4 @@
-name: Lint and Typecheck
+name: Lint and Typecheck and Test
 on: push
 
 jobs:
@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.13", "3.14"]
+        python-version: ["3.11", "3.12", "3.13"]
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
@@ -20,3 +20,4 @@ jobs:
     - run: ruff check monaco_dict_utils
     - run: ty check monaco_dict_utils --python "$pythonLocation"
     - run: black --check monaco_dict_utils
+    - run: python -m pytest
