@@ -1,3 +1,17 @@
+"""Utilities for converting parameter dictionaries to Monaco simulations.
+
+This module provides functions for converting parameter dictionaries into Monaco
+simulation objects and outputs. It handles mapping distribution parameters,
+constant values, and simulation outputs between dictionary and Monaco formats.
+
+Functions:
+    params_to_sim: Add input variables and constants to a simulation
+    params_to_model: Create a model from factory function and parameters
+    case_vals_to_dict: Convert case values to a parameter dictionary
+    output_to_case: Convert model output to a Case object
+    outvals_to_dict: Convert simulation output values to a dictionary
+"""
+
 import re
 from collections.abc import Callable
 from typing import Any
@@ -124,5 +138,4 @@ def outvals_to_dict(sim: Sim) -> dict:
         Dictionary mapping outvar to the np array of the output values.
 
     """
-
     return {k: outvar.nums for k, outvar in sim.outvars.items()}

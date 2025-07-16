@@ -54,3 +54,7 @@ line-ending = "auto"
 
 [tool.setuptools]
 packages = ["monaco_dict_utils"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+monaco_dict_utils = ["py.typed"]

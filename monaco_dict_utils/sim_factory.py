@@ -1,7 +1,6 @@
 from collections.abc import Callable
 
 from monaco import Sim, SimFunctions
-
 from monaco_utils.params_to_sim import (
     case_vals_to_dict,
     output_to_case,
