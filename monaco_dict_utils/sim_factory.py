@@ -1,7 +1,17 @@
+"""Utilities for creating Monaco simulations from model factories.
+
+This module provides functions for creating Monaco simulations from model factory
+functions and parameter dictionaries. It handles setting up the simulation with
+appropriate input variables, constants, and processing functions.
+
+Functions:
+    sim_factory: Create a Monte Carlo simulation from a model factory and parameters
+"""
+
 from collections.abc import Callable
 
 from monaco import Sim, SimFunctions
-from monaco_utils.params_to_sim import (
+from .params_to_sim import (
     case_vals_to_dict,
     output_to_case,
     params_to_model,
